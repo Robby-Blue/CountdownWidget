@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">CountdownWidget</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="add_widget">Add widget</string>
+    <string name="app_widget_description">This is an app widget description</string>
+    <string name="delete_button_description">Delete Countdown</string>
+    <string name="create_countdown">Create</string>
+    <string name="name_hint">Name</string>
+    <string name="select_date">Select Date</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreateCountdownActivity">
+
+    <Button
+        android:id="@+id/create_countdown_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="16dp"
+        android:text="@string/create_countdown" />
+
+    <EditText
+        android:id="@+id/countdown_name_edittext"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/create_countdown_button"
+        android:layout_centerHorizontal="true"
+        android:autofillHints="name"
+        android:hint="@string/name_hint"
+        android:inputType="none"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/select_date_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/countdown_name_edittext"
+        android:layout_centerHorizontal="true"
+        android:text="@string/select_date" />
+
+    <TextView
+        android:id="@+id/countdown_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/select_date_button"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>
