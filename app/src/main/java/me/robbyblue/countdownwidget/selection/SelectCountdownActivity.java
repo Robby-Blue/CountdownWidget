@@ -35,6 +35,7 @@ public class SelectCountdownActivity extends AppCompatActivity {
 
             CountdownWidgetData widget = data.getWidgetById(widgetId);
             widget.setCountdownUUID(countdown.getUuid());
+            data.saveData();
 
             Intent updateIntent = new Intent(this, CountdownWidget.class);
             updateIntent.setAction(AppWidgetManager.ACTION_APPWIDGET_UPDATE);

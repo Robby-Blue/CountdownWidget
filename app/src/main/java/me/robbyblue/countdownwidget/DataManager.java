@@ -44,7 +44,7 @@ public class DataManager {
 
     public Countdown getCountdownById(UUID uuid) {
         for (Countdown countdown : this.countdowns) {
-            if (countdown.getUuid() == uuid) return countdown;
+            if (countdown.getUuid().equals(uuid)) return countdown;
         }
         return null;
     }
@@ -78,7 +78,7 @@ public class DataManager {
         }
     }
 
-    private void saveData() {
+    public void saveData() {
         try {
             JSONArray countdownsData = new JSONArray();
             for (Countdown countdown : countdowns) {

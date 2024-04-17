@@ -31,11 +31,7 @@ public class CountdownWidget extends AppWidgetProvider {
         if (data.getCountdowns().size() == 0)
             return;
 
-        Countdown countdown = data.getCountdownForWidget(appWidgetId);
-
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.countdown_widget);
-
-        //appWidgetManager.updateAppWidget(appWidgetId, views);
 
         Intent intent = new Intent(context, SelectCountdownActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -43,6 +39,7 @@ public class CountdownWidget extends AppWidgetProvider {
         PendingIntent pendingIntent = PendingIntent.getActivity(context, appWidgetId, intent, PendingIntent.FLAG_IMMUTABLE);
         views.setOnClickPendingIntent(R.id.countdown_name, pendingIntent);
 
+        Countdown countdown = data.getCountdownForWidget(appWidgetId);
         // Update the widget
         if (countdown == null) {
             views.setTextViewText(R.id.countdown_name, "Click to add");
