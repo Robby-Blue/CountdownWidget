@@ -2,8 +2,12 @@ package me.robbyblue.countdownwidget;
 
 import org.json.JSONObject;
 
+import java.sql.Time;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
 
@@ -49,23 +53,7 @@ public class Countdown {
     }
 
     public String formatEndTimeDelta() {
-        long seconds = (this.endTime - System.currentTimeMillis()) / 1000;
-
-        int minutes = (int) (seconds / 60.0);
-        int hours = (int) Math.ceil(minutes / 60.0);
-        int days = (int) Math.ceil(hours / 24.0);
-        int weeks = (int) Math.ceil(days / 7.0);
-        int months = (int) Math.ceil(days / 30.0);
-        int years = (int) Math.ceil(days / 365.0);
-
-        if (seconds < 0) return "now";
-        if (minutes < 60) return "soon";
-        if (hours < 24) return hours + "h";
-        if (days < 7) return days + "d";
-        if (days < 30) return weeks + "w";
-        if (months < 12) return months + "mo";
-
-        return years + "y";
+        return TimeHelper.formatTimeDifference(System.currentTimeMillis(), this.endTime);
     }
 
     public JSONObject toJSON() {
